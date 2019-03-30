@@ -32,10 +32,9 @@ function sell() {
       },
 
       {
-        type: "checkbox",
+        type: "confirm",
         name: "itemShipping",
-        message: "Prime Shipping?",
-        choices: ["Yes", "No", "Free Domestic"]
+        message: "Free Shipping?"
       }
     ])
     .then(sell => {
@@ -45,7 +44,9 @@ function sell() {
     });
 }
 
-function buy() {}
+function buy() {
+  inquirer.prompt([]);
+}
 
 inquirer
   .prompt([
@@ -57,6 +58,7 @@ inquirer
   ])
   .then(main => {
     if (main.mainSelect === "Buy") {
+      buy();
     }
     if (main.mainSelect === "Sell") {
       sell();
